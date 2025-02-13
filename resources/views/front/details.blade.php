@@ -29,7 +29,7 @@
                     <div>
                         <h1 class="font-bold text-white line-clamp-2">{{ $ticket->name }}</h1>
                         <div class="flex items-center gap-[6px]">
-                            <img src="{{ Storage::url($ticket->category->icon) }}" class="w-[22px] h-[22px]"
+                            <img src="{{ Storage::url($ticket->category->icon_white) }}" class="w-[22px] h-[22px]"
                                 alt="icon">
                             <p class="text-sm leading-[18px] text-white">{{ $ticket->category->name }}</p>
                         </div>

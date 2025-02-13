@@ -15,6 +15,7 @@ class Category extends Model
         'name',
         'slug',
         'icon',
+        'icon_white',
     ];
 
     public function setNameAttribute($value)
