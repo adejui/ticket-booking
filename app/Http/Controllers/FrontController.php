@@ -26,7 +26,7 @@ class FrontController extends Controller
 
     public function details(Ticket $ticket)
     {
-        dd($ticket);
+        // dd($ticket);
         return view('front.details', compact('ticket'));
     }
 
