@@ -3,7 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\BookingTransaction;
-use BookingRepositoryInterface;
+use App\Repositories\Contracts\BookingRepositoryInterface;
 
 class BookingRepository implements BookingRepositoryInterface
 {

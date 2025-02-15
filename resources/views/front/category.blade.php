@@ -55,7 +55,7 @@
                                         </p>
                                     </div>
                                     <p class="font-bold text-sm leading-[21px] text-[#F97316]">
-                                        Rp{{ number_format($itemTicket->price, 0, '.', ',') }}</p>
+                                        Rp{{ number_format($itemTicket->price, 0, ',', '.') }}</p>
                                 </div>
                             </div>
                             <p class="w-fit flex shrink-0 items-center gap-[2px] rounded-full p-[6px_8px] bg-[#FFE5D3]">

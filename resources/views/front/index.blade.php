@@ -131,7 +131,7 @@
                                                 class="w-[18px] h-[18px]" alt="icon">
                                             <p class="font-semibold text-xs leading-[18px]">{{ $ticket->seller->name }}</p>
                                         </div>
-                                        <p class="font-bold text-sm leading-[21px] text-[#F97316]">Rp{{ number_format($ticket->price, 0, '.', ',') }}</p>
+                                        <p class="font-bold text-sm leading-[21px] text-[#F97316]">Rp{{ number_format($ticket->price, 0, ',', '.') }}</p>
                                     </div>
                                 </div>
                                 <p

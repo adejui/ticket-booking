@@ -2,8 +2,8 @@
 
 namespace App\Services;
 
+use App\Repositories\Contracts\BookingRepositoryInterface;
 use App\Models\BookingTransaction;
-use BookingRepositoryInterface;
 use Illuminate\Support\Facades\DB;
 use App\Repositories\Contracts\TicketRepositoryInterface;
 
@@ -37,7 +37,7 @@ class BookingService
     public function storeBookingInSession($ticket, $validatedData, $totals)
     {
         session()->put('booking', [
-            'ticked_id' => $ticket->id,
+            'ticket_id' => $ticket->id,
             'name' => $validatedData['name'],
             'email' => $validatedData['email'],
             'phone_number' => $validatedData['phone_number'],
