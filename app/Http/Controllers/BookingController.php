@@ -8,6 +8,7 @@ use App\Services\BookingService;
 use App\Models\BookingTransaction;
 use App\Http\Requests\StoreBookingRequest;
 use App\Http\Requests\StorePaymentRequest;
+use App\Http\Requests\StoreCheckBookingRequest;
 
 class BookingController extends Controller
 {
@@ -58,5 +59,25 @@ class BookingController extends Controller
     public function bookingFinished(BookingTransaction $bookingTransaction)
     {
         return view('front.booking_finished', compact('bookingTransaction'));
+    }
+
+    public function checkBooking()
+    {
+        return view('front.check_booking');
+    }
+
+    public function checkBookingDetails(StoreCheckBookingRequest $request)
+    {
+        $validated = $request->validated();
+
+        $bookingDetails = $this->bookingService->getBookingDetails($validated);
+
+        // dd($bookingDetails);
+
+        if ($bookingDetails) {
+            return view('front.check_booking_details', compact('bookingDetails'));
+        }
+
+        return redirect()->route('front.check_booking')->withErrors(['error' => 'Transaction not found']);
     }
 }
