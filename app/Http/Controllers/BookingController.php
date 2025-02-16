@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Ticket;
 use Illuminate\Http\Request;
 use App\Services\BookingService;
+use App\Models\BookingTransaction;
 use App\Http\Requests\StoreBookingRequest;
 use App\Http\Requests\StorePaymentRequest;
 
@@ -52,5 +53,10 @@ class BookingController extends Controller
         }
 
         return redirect()->route('front.index')->withErrors(['error' => 'Payment failed. Please try again']);
+    }
+
+    public function bookingFinished(BookingTransaction $bookingTransaction)
+    {
+        return view('front.booking_finished', compact('bookingTransaction'));
     }
 }
