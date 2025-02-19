@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
-            
+
             $table->string('name');
             $table->string('slug');
             $table->string('address');
@@ -23,7 +23,7 @@ return new class extends Migration
             $table->boolean('is_popular');
             $table->text('about');
             $table->time('open_time_at');
-            $table->time('close_time_at');
+            $table->time('closed_time_at');
             $table->foreignId('category_id')->constrained()->cascadeOnDelete();
             $table->foreignId('seller_id')->constrained()->cascadeOnDelete();
             $table->softDeletes();
